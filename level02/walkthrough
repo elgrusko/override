@@ -1,0 +1,15 @@
+En executant le binaire, on peut voir qu'il nous demande un username ainsi
+qu'un password. 
+Le fichier "/home/users/level03/.pass" est egalement lu puis stocke sur la stack.
+Si nous entrons le bon mot de passe, un shell pop. 
+
+Apres plus plusieurs tentatives de BoF, il semblerait que cela ne soit pas possible.
+
+Cependant quelque chose d'interessant saute au yeux : Si nous entrons 
+les mauvais identifiants, un printf affiche le username que nous 
+avons passe au programme. Ensuite, exit() est appele. 
+
+printf semble ne prendre aucun autre argument que notre entree ! Essayons d'exploiter 
+une format string! 
+
+
