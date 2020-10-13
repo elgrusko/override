@@ -16,8 +16,9 @@ int verify_user_pass(char *userpass)
 
 int main(int argc, char **argv)
 {
-    char password[64] = {}; // rep stos %eax,%es:(%edi)
+    char password[64];
     int check = 0;
+    
     puts("********* ADMIN LOGIN PROMPT *********");
     printf("Enter Username: ");
     fgets(a_user_name, 256, stdin);
@@ -33,11 +34,11 @@ int main(int argc, char **argv)
     if (check == 0)
     {
         puts("nope, incorrect password...\n");
-        return 1;
+        return (1);
     }
     if (check == 0)
     {
-        return 0;
+        return (0);
     }
-    return 1;
+    return (1);
 }
