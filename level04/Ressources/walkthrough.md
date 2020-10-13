@@ -11,6 +11,5 @@ Le fils va faire un appel un ptrace() afin qu'il soit trace par le pere et qu'il
 Ensuite, une string indiquant `Give me some shellcode, k` va etre afficher grace a un puts, puis, via un gets() nous allons 
 etre invite a remplir le buffer de 32 bytes : 
 
-`puts("Give me some shellcode, k");`
-
-`gets(str);`
+    puts("Give me some shellcode, k");
+    gets(str);
