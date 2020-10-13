@@ -3,7 +3,7 @@ En desassemblant la fonction main :
 	$ gdb level00
 	$ disas main
 
-On peut voir qu'un cmp est realise jsute apres la fonction scanf().
+On peut voir qu'un cmp est realise juste apres la fonction scanf().
 Il verifie que notre string est egale a 0x149c (5276 en decimal), puis, ouvre
 un shell si c'est True.
 
