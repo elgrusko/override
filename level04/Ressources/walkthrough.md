@@ -12,4 +12,5 @@ Ensuite, une string indiquant `Give me some shellcode, k` va etre afficher grace
 etre invite a remplir le buffer de 32 bytes : 
 
 `puts("Give me some shellcode, k");`
+
 `gets(str);`
