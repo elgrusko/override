@@ -81,7 +81,7 @@ Tout ce que nous allons avoir a faire est de bypass ptrace et de checker quelles
       -> Enter Login: AAAAAA
       -> Enter Serial: 123456
       $ set $eax=0      <- falsifie le retour de ptrace
-      $ r
+      $ c
       $ print $eax      (0x1e240 = 123456, soit notre entree)
       $ x $ebp-0x10     (0x005f0c3a = 6229050, soit la valeur attendue en serial-key pour le username 'AAAAAA')
   
