@@ -5,7 +5,7 @@ Il boucle a l'infini, en demandant une entree a l'utilisateur (a la maniere d'un
 
 store : Demande un index puis une valeur, puis stock la valeur a l'index indique.
 read  : Demande un index puis lit la valeur a l'index indique.
-quit  : ... :)
+quit  : Quitte le binaire
 
 En desassemblant le binaire pour en savoir un peu plus, on peut noter plusieurs choses : 
 
