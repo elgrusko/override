@@ -67,9 +67,12 @@ En faisaint :
 	$ read
 	$ -9
 	
-On obtient : 0xffffd544 (en decimal). Il suffit donc de proceder pareil hors gdb pour obtenir l'adresse de notre tableau :
+On obtient : 0xffffd544 (soit l'adresse du tableau). Il suffit donc de proceder pareil hors gdb pour obtenir l'adresse de notre tableau :
 
-	0xffffd564 (4294956388)
+	$ ./level07
+	$ read
+	$ -9
+	=> 0xffffd564 (4294956388)
 
 J'ai choisi le shellcode suivant (23 bytes) : http://shell-storm.org/shellcode/files/shellcode-827.php
 
