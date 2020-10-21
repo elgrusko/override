@@ -66,4 +66,7 @@ Nous arrivons donc a reecrire (2 bytes par 2 bytes) l'adresse de exit() sur la G
 
 	$whoami
 	=> level06
+	
+	$cat /home/users/level06/.pass
+	=> h4GtNnaMs2kZFN92ymTr2DcJHAzMfzLW25Ep59mq
 
