@@ -1,4 +1,5 @@
 unsigned int get_unum() {
+    
     unsigned int input;
     
     scanf("%u", input);
@@ -8,8 +9,10 @@ unsigned int get_unum() {
 }
 
 int store_number(int *tab) {
+    
     unsigned int input = 0
     unsigned int index = 0;
+    
     printf(" Number: ");
     input = get_unum();
     printf(" Index: ");
@@ -18,18 +21,20 @@ int store_number(int *tab) {
         puts(" *** ERROR! ***");
         puts("   This index is reserved for wil!");
         puts(" *** ERROR! ***");
-        return 1;
+        return (1);
     }
     tab[index] = input;
-    return 0;
+    return (0);
 }
 
 int read_number(int *tab) {
+    
     unsigned int input = 0;
+    
     printf(" Index: ");
     input = get_unum();
     printf(" Number at data[%u] is %u\n", input, tab[input]);
-    return 0;
+    return (0);
 }
 
 int main(int argc, char **argv, char **env) {
@@ -60,7 +65,7 @@ int main(int argc, char **argv, char **env) {
         } else if (strncmp("read", buffer, 4) == 0) {
             ret = read_number(&tab);
         } else if (strncmp("quit", buffer, 4) == 0) {
-            return 0;
+            return (0);
         }
         if (ret != 0) {
             printf(" Failed to do %s command\n", buffer);
@@ -69,5 +74,5 @@ int main(int argc, char **argv, char **env) {
         }
         bzero(buffer, 20);
     }
-   return 0;
+   return (0);
 }
