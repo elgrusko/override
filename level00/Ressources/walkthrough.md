@@ -12,6 +12,7 @@ un shell si c'est True.
 	   0x080484e7 <+83>:	cmp    eax,0x149c
 
 
-	$ ./level00 5276
+	$ ./level00 
+	$ 5276
 	$ whoami
 	=> level01

